@@ -1,12 +1,15 @@
 import ReferVendor from "@/components/pages/refer-vendor";
 import MainLayout from "@/components/templates/MainLayout";
 
-const page = () => {
+const Page = () => {
   return (
-    <MainLayout pageTitle={"Hi Admin 👋"}>
+    <MainLayout
+      pageTitle={"Hi Admin 👋"}
+      customBg="bg-gradient-to-b from-[#FAFBE6] to-[#E7AF0E]" 
+    >
       <ReferVendor />
     </MainLayout>
   );
 };
 
-export default page;
+export default Page;

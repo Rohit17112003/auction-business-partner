@@ -12,7 +12,7 @@ const BannerContainer = ({
   return (
     <div
       style={bgStyle}
-      className={`${style} flex h-28 items-center justify-between rounded-xl p-5 lg:ps-8 ps-4`}
+      className={`${style} flex h-28 items-center justify-between rounded-2xl p-5 lg:ps-8 ps-4 font-poppins`}
     >
       <div className="flex items-center gap-4 text-white lg:gap-6">
         {image && (
@@ -25,14 +25,14 @@ const BannerContainer = ({
           />
         )}
         <div>
-          <h2 className="text-2xl font-medium">{title}</h2>
-          <p className="md:text-[1.1rem] text-[1rem]">{description}</p>
+          <h2 className="md:text-2xl  text-lg font-medium">{title}</h2>
+          <p className="md:text-[1.3rem] font-light text-[0.85rem] md:mt-2">{description}</p>
         </div>
       </div>
 
       {url && (
         <Link href={url}>
-          <i className="ri-arrow-right-s-line ri-2x text-white"></i>
+          <i className="ri-arrow-right-s-line ri-2x font-light text-white"></i>
         </Link>
       )}
     </div>

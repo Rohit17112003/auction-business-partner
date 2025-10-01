@@ -3,7 +3,7 @@ import { useState } from "react";
 import Header from "../organisms/Header";
 import SideBar from "../organisms/SideBar";
 
-export default function MainLayout({ children, pageTitle }) {
+export default function MainLayout({ children, pageTitle, customBg }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
@@ -27,7 +27,12 @@ export default function MainLayout({ children, pageTitle }) {
           setIsSidebarOpen={setIsSidebarOpen}
         />
 
-        <main className="max-w-[100vw] flex-1 overflow-y-auto py-5  md:px-8 px-5 bg-gradient-to-b from-[#fff6a9c4] to-[#ecd8a2c4]">
+        {/* ✅ Agar customBg diya hai to use karo, warna default */}
+        <main
+          className={`max-w-[100vw] flex-1 overflow-y-auto py-5 md:px-8 px-5 ${
+            customBg || "bg-gradient-to-b from-[#FFF6A9] to-[#ECD8A2]"
+          }`}
+        >
           {children}
         </main>
       </div>

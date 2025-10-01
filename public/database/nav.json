@@ -49,41 +49,41 @@
   "stats": [
     {
       "icon": "ri-nurse-line",
-      "title": "No of Auction Product",
-      "value": "20"
+      "title": "Products/services Auctioned",
+      "value": "203"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "No of Successful Auction",
-      "value": "30"
+      "title": "No. of Successful Auctions",
+      "value": "120"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "Value of auction sale",
+      "title": "Total Value of Auction Sales",
       "value": "20,00,000 INR"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "Balance no of auction",
+      "title": "Balance No. of Auctions left",
       "value": "20"
     },{
       "icon": "ri-nurse-line",
-      "title": "No of Auction Product",
-      "value": "20"
+      "title": "Balance No. Days",
+      "value": "203"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "No of Successful Auction",
-      "value": "30"
+      "title": "Referral Points Earned till date",
+      "value": "2000"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "Value of auction sale",
-      "value": "20, 000"
+      "title": "Outstanding from DilSe52",
+      "value": "2000"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "Balance no of auction",
+      "title": "Discount Sales Amount",
       "value": "2000 INR"
     }
   ]

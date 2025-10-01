@@ -1,131 +1,108 @@
 "use client";
+import { useState } from "react";
 import Button from "@/components/atoms/Button";
 import BannerButton from "@/components/atoms/BannerButton";
 import Input from "@/components/atoms/Input";
-import Textarea from "@/components/atoms/TextArea";
 import ImageUploader from "@/components/molecules/ImageUploader";
-import Select from "@/components/atoms/Select";
 
 const AddAuction = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    carName: "",
+    auctionNo: "",
+    time: "",
+    cost: "",
+    price: "",
+    bids: "",
+    img: null,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleImageUpload = (imageUrl) => {
+    setFormData((prev) => ({ ...prev, img: imageUrl }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Submitted:", formData);
+    // 🔗 Call your backend API here
+  };
+
   return (
     <section className="space-y-6 pb-8">
-      <BannerButton route={"/live-auctions"} label="Add new product for auction" />
-      <form className="grid gap-x-20 gap-y-6 lg:grid-cols-2" action="">
-        <ImageUploader />
-        <Textarea style="lg:col-span-2" placeholder="Description" />
+      <BannerButton route="/" label="Add New Auction" />
+      <form
+        className="grid gap-x-20 gap-y-6 lg:grid-cols-2"
+        onSubmit={handleSubmit}
+      >
 
         <Input
           type="text"
-          name="productName"
-          placeholder="Product Name"
+          name="name"
+          placeholder="Title (Short Name)"
           icon="ri-price-tag-3-line"
+          onChange={handleChange}
         />
         <Input
           type="text"
-          name="hsnCode"
-          placeholder="HSN Code"
-          icon="ri-currency-line"
+          name="carName"
+          placeholder="Full Name / Product Model"
+          icon="ri-car-line"
+          onChange={handleChange}
+        />
+        <Input
+          type="text"
+          name="auctionNo"
+          placeholder="Auction Number"
+          icon="ri-hashtag"
+          onChange={handleChange}
+        />
+        <Input
+          type="text"
+          name="time"
+          placeholder="Auction Duration (e.g., 2 days left)"
+          icon="ri-timer-line"
+          onChange={handleChange}
         />
         <Input
           type="number"
-          name="marketPrice"
+          name="cost"
+          placeholder="Expected Price"
+          icon="ri-money-dollar-circle-line"
+          onChange={handleChange}
+        />
+        <Input
+          type="number"
+          name="price"
           placeholder="Market Price"
           icon="ri-bar-chart-line"
+          onChange={handleChange}
         />
-        <Input
+       <div>
+         <Input
           type="number"
-          name="vendorExpectedPrice"
-          placeholder="Vendor Expected Price"
-          icon="ri-money-dollar-circle-line"
+          name="bids"
+          placeholder="Current Bid Price"
+          icon="ri-auction-line"
+          onChange={handleChange}
         />
-        <Input
-          type="number"
-          name="gst"
-          placeholder="GST"
-          icon="ri-file-text-line"
+       </div>
+        <ImageUploader onImageUpload={handleImageUpload} />
+
+
+        <Button
+          style="md:w-56 w-full lg:col-span-2"
+          type="submit"
+          label="Add Auction"
         />
-        <Input
-          type="number"
-          name="cgst"
-          placeholder="CGST"
-          icon="ri-file-text-line"
-        />
-        <Input
-          type="number"
-          name="sgst"
-          placeholder="SGST"
-          icon="ri-file-text-line"
-        />
-        <Input
-          type="number"
-          name="ccess"
-          placeholder="CCESS"
-          icon="ri-percent-line"
-        />
-        <Input
-          type="number"
-          name="scess"
-          placeholder="SCESS"
-          icon="ri-percent-line"
-        />
-        <Input
-          type="number"
-          name="finalVendorPrice"
-          placeholder="Final Vendor Price"
-          icon="ri-cash-line"
-        />
-        <Input
-          type="date"
-          name="dateOfAuction"
-          placeholder="Date of Auction"
-          icon="ri-calendar-line"
-        />
-        <Select
-          name="duration"
-          icon="ri-time-line"
-          placeholder="Select Duration"
-          options={["1 Day", "3 Days", "1 Week", "Custom"]}
-        />
-        <Select
-          name="doorDelivery"
-          icon="ri-truck-line"
-          placeholder="Door Delivery"
-          options={["Yes", "No"]}
-        />
-        <Input
-          type="text"
-          name="doorDeliveryTerms"
-          placeholder="Door Delivery Terms"
-          icon="ri-file-text-line"
-        />
-        <Select
-          name="matchTheOffer"
-          icon="ri-shake-hands-line"
-          placeholder="Match The Offer"
-          options={["Yes", "No"]}
-        />
-        <Input
-          type="number"
-          name="winnersCount"
-          placeholder="How Many Winners Can Match The Offer"
-          icon="ri-user-star-line"
-        />
-        <Select
-          name="top3SocialCause"
-          icon="ri-heart-line"
-          placeholder="Your Top 3 Preferred Social Cause"
-          options={["Education", "Environment", "Healthcare", "Others"]}
-        />
-        <Input
-          type="number"
-          name="startPriceBid"
-          placeholder="Start Price Bid (After Platform Charges)"
-          icon="ri-price-tag-line"
-        />
-        <Button style="md:w-56 w-full lg:col-span-2" label="Add" />
       </form>
     </section>
   );
 };
 
 export default AddAuction;
+

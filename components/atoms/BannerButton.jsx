@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const BannerButton = ({ label, route, title }) => {
   return (
-    <div className="bg-lightyellow text-light flex w-full items-center md:gap-6 gap-3 rounded-xl p-4 md:p-5">
+    <div className="bg-lightyellow text-light flex w-full items-center md:gap-6 gap-3 rounded-2xl p-4 md:p-5">
       <Link href={route}>
         <i className="ri-arrow-left-line ri-lg"></i>
       </Link>

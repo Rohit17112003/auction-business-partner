@@ -11,7 +11,7 @@ const SignIn = () => {
 
   return (
     <main>
-      <section className="fixed grid h-screen w-full bg-gradient-to-b from-[#fff6a9c4] to-[#ecd8a2c4] lg:grid-cols-2">
+      <section className="fixed grid h-screen w-full bg-gradient-to-b from-[#FDF3A4] to-[#E7AF0E] lg:grid-cols-2">
         <div className="flex flex-col items-center gap-1 px-5 py-10">
           <Image
             className="h-32 w-32 bg-cover"

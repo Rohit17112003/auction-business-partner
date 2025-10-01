@@ -26,18 +26,20 @@ const DashboardLink = ({
           onClick={toggleSubMenu}
           className={`${
             active
-              ? "bg-darkyellow/90 text-light"
-              : "bg-transparent text-dark"
-          } flex w-full flex-row  items-center justify-between rounded-md px-3 py-2.5 transition-all duration-200 hover:bg-lightyellow/10 hover:text-darkyellow`}
+              ? "bg-[#0078D417] text-[#0078D4]"
+              : "bg-transparent text-[#4D525F]"
+          } font-urbanist flex w-full flex-row items-center justify-between rounded-md px-3 py-2.5 transition-all duration-200 hover:bg-[#0078D417]/40 hover:text-[#0078D4]/70`}
         >
-          <span className="text-md flex items-center gap-1.5">
+          <span className="flex items-center gap-1.5 text-[1.05rem]">
             <i className={`${heroIcon} ri-lg`}></i>
-            <span className=" font-medium capitalize">{label}</span>
+            <span className="font-urbanist font-semibold capitalize">
+              {label}
+            </span>
           </span>
           {subMenu.length > 0 && (
-            <span className=" text-sm font-medium capitalize">
+            <span className="text-lg font-semibold capitalize">
               <i
-                className={` ${active ? "text-gray-600" : "text-gray-400"} ${
+                className={` ${active ? "text-[#4D525F]" : "text-gray-400"} ${
                   isSubMenOpen
                     ? "ri-arrow-down-s-line"
                     : "ri-arrow-right-s-line"

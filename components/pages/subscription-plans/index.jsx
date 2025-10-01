@@ -47,7 +47,7 @@ const SubscriptionPlans = () => {
             <h3 className="text-light px-4 text-center text-xl font-medium tracking-wide md:text-4xl">
               Free for 30 DAY’S only for 5 products
             </h3>
-            <button className="bg-light border border-light cursor-pointer text-darkyellow hover:text-light hover:bg-lightyellow flex w-40 justify-center rounded-full px-6 py-3 font-semibold tracking-wide md:py-2.5">
+            <button className="bg-light border border-light cursor-pointer text-[#E7B010] font-urbanist hover:text-light hover:bg-lightyellow flex w-40 justify-center rounded-full px-6 py-3 font-semibold tracking-wide md:py-2.5">
               Subscribe
             </button>
           </div>
@@ -78,7 +78,7 @@ const SubscriptionPlans = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className="bg-light border border-light cursor-pointer text-darkyellow hover:text-light hover:bg-lightyellow flex w-40 justify-center rounded-full px-6 py-3 font-semibold tracking-wide md:py-2.5">
+                  <button className="bg-light border border-light cursor-pointer text-[#E7B010] font-urbanist hover:text-light hover:bg-lightyellow flex w-40 justify-center rounded-full px-6 py-3 font-semibold tracking-wide md:py-2.5">
                     Subscribe
                   </button>
                 </div>
