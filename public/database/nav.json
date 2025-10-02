@@ -30,6 +30,11 @@
       "route": "/payment-management",
       "label": "payment management"
     },
+     {
+      "icon": "ri-discount-percent-line",
+      "route": "/discount-transaction",
+      "label": "discount-transaction"
+    },
     {
       "icon": "ri-discount-percent-line",
       "route": "/discount-coupons",

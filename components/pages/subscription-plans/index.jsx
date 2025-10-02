@@ -1,4 +1,5 @@
-import BannerButton from "@/components/atoms/BannerButton";
+"use client";
+import Link from "next/link";
 
 const paidPlans = [
   {
@@ -36,8 +37,23 @@ const paidPlans = [
 const SubscriptionPlans = () => {
   return (
     <section className="mb-10 space-y-6">
-      <BannerButton route="/" label="Subscription Plans" />
-
+      <div className="bg-lightyellow text-light flex flex-col items-center justify-between gap-3 rounded-xl px-3 py-3 md:flex-row">
+        <div className="flex w-full items-center gap-3">
+          <Link href="/">
+            <i className="ri-arrow-left-line ri-lg cursor-pointer"></i>
+          </Link>
+          <span className="text-lg font-semibold md:text-xl">
+            Product Details
+          </span>
+        </div>
+        <div className="flex w-full justify-end gap-2 md:w-auto md:gap-4">
+          <Link href="/subscription-plans/pushase-auctions">
+            <button className="flex text-nowrap font-semibold md:text-lg items-center gap-1 rounded bg-[#F13E3E] px-3 py-1.5 text-sm md:px-5 cursor-pointer">
+            Top-up <i className="ri-wallet-3-fill"></i>
+          </button>
+          </Link>
+        </div>
+      </div>
       <div className="md:px-10">
         <div className="border-light rounded-xl border-3">
           <h2 className="text-light bg-darkyellow/75 border-light rounded-t-xl border-b-3 py-3 text-center text-xl font-bold tracking-wide md:text-2xl">
@@ -47,7 +63,7 @@ const SubscriptionPlans = () => {
             <h3 className="text-light px-4 text-center text-xl font-medium tracking-wide md:text-4xl">
               Free for 30 DAY’S only for 5 products
             </h3>
-            <button className="bg-light border border-light cursor-pointer text-[#E7B010] font-urbanist hover:text-light hover:bg-lightyellow flex w-40 justify-center rounded-full px-6 py-3 font-semibold tracking-wide md:py-2.5">
+            <button className="bg-light border-light font-urbanist hover:text-light hover:bg-lightyellow flex w-40 cursor-pointer justify-center rounded-full border px-6 py-3 font-semibold tracking-wide text-[#E7B010] md:py-2.5">
               Subscribe
             </button>
           </div>
@@ -72,13 +88,13 @@ const SubscriptionPlans = () => {
                   </h3>
                   <ul className="text-light -mt-2 space-y-2 text-[1.1rem] tracking-wide">
                     {features.map((feature, i) => (
-                      <li key={i} className="flex  gap-2">
-                        <i className="ri-circle-fill text-[0.4rem] mt-2.5"></i>
+                      <li key={i} className="flex gap-2">
+                        <i className="ri-circle-fill mt-2.5 text-[0.4rem]"></i>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <button className="bg-light border border-light cursor-pointer text-[#E7B010] font-urbanist hover:text-light hover:bg-lightyellow flex w-40 justify-center rounded-full px-6 py-3 font-semibold tracking-wide md:py-2.5">
+                  <button className="bg-light border-light font-urbanist hover:text-light hover:bg-lightyellow flex w-40 cursor-pointer justify-center rounded-full border px-6 py-3 font-semibold tracking-wide text-[#E7B010] md:py-2.5">
                     Subscribe
                   </button>
                 </div>

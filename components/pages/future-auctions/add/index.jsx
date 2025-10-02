@@ -9,7 +9,7 @@ import Select from "@/components/atoms/Select";
 const AddAuction = () => {
   return (
     <section className="space-y-6 pb-8">
-      <BannerButton route={"/future-auctions"} label="Add new product for auction" />
+      <BannerButton route={"/future-auctions"} label="Add new product/service for auction" />
       <form className="grid gap-x-20 gap-y-6 lg:grid-cols-2" action="">
         <ImageUploader />
         <Textarea style="lg:col-span-2" placeholder="Description" />
