@@ -27,7 +27,7 @@ export default function MainLayout({ children, pageTitle, customBg }) {
           setIsSidebarOpen={setIsSidebarOpen}
         />
 
-        {/* ✅ Agar customBg diya hai to use karo, warna default */}
+        {/*  Agar customBg diya hai to use karo, warna default */}
         <main
           className={`max-w-[100vw] flex-1 overflow-y-auto py-5 md:px-8 px-5 ${
             customBg || "bg-gradient-to-b from-[#FFF6A9] to-[#ECD8A2]"
