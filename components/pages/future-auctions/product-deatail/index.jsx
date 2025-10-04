@@ -32,20 +32,20 @@ const ProductDetail = () => {
   return (
     <section className="space-y-6">
       {/* Header */}
-      <div className="bg-lightyellow text-light flex flex-col items-center justify-between gap-3 rounded-xl px-3 py-3 md:flex-row">
+      <div className="bg-lightyellow text-light flex flex-col items-center justify-between gap-3 rounded-xl px-3 py-3 md:flex-row font-poppins">
         <div className="flex w-full items-center gap-3">
           <Link href="/future-auctions">
             <i className="ri-arrow-left-line ri-lg cursor-pointer"></i>
           </Link>
-          <span className="text-lg font-semibold md:text-xl">
+          <span className="text-lg font-medium md:text-xl">
             Product Details
           </span>
         </div>
         <div className="flex w-full justify-end gap-2 md:w-auto md:gap-4">
-          <button className="flex items-center gap-1 rounded bg-[#F13E3E] px-3 py-2 text-sm md:px-5 md:text-base">
+          <button className="flex items-center gap-1 rounded bg-[#F13E3E] px-3 py-2 text-sm md:px-5 md:text-lg font-poppins font-medium">
             Delete <i className="ri-delete-bin-fill"></i>
           </button>
-          <button className="flex items-center gap-1 rounded bg-[#2CB24B] px-3 py-2 text-sm md:px-5 md:text-base">
+          <button className="flex items-center gap-1 rounded bg-[#2CB24B] px-3 py-2 text-sm md:px-5 md:text-lg font-poppins font-medium">
             Edit <i className="ri-pencil-fill ps-1"></i>
           </button>
         </div>

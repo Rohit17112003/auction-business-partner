@@ -9,9 +9,17 @@ import Select from "@/components/atoms/Select";
 const AddAuction = () => {
   return (
     <section className="space-y-6 pb-8">
-      <BannerButton route={"/live-auctions"} label="Add new product/service for auction" />
-      <form className="grid gap-x-20 gap-y-6 lg:grid-cols-2" action="">
-        <ImageUploader />
+      <BannerButton
+        route={"/live-auctions"}
+        label="Add new product/service for auction"
+      />
+      <form className="grid gap-5 md:gap-6 lg:grid-cols-2" action="">
+        <ImageUploader className="md:col-span-1" />
+        <p className="font-poppins text-medium md:pt-2  text-[0.85rem] text-[#F13E3E] md:col-span-1">
+          Instructions on pic size, pix cells, pic quality etc to be provided
+          here. If videos instructions to be provided duration (30 sec), video
+          quality etc. Max 4 pics and 1 video can be uploaded.
+        </p>
         <Textarea style="lg:col-span-2" placeholder="Description" />
 
         <Input

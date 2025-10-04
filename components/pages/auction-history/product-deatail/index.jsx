@@ -5,16 +5,16 @@ const ProductDetail = ({ productId }) => {
   return (
     <section className="space-y-6">
       {/* header banner */}
-      <div className="bg-lightyellow flex  items-center justify-between gap-2 rounded-xl px-3 py-3 text-light">
+      <div className="bg-lightyellow flex  items-center justify-between gap-2 rounded-xl px-3 py-3 text-light font-poppins">
         <div className="flex w-full items-center gap-3">
           <Link href="/future-auctions"><i className="ri-arrow-left-line ri-lg"></i></Link> 
-          <span className="text-xl font-semibold">Product Details</span>
+          <span className="text-xl font-medium">Product Details</span>
         </div>
         <div className="flex gap-4">
-          <button className="flex items-center justify-center gap-1 rounded bg-[#F13E3E] md:px-6 px-3 py-2 cursor-pointer text-sm md:text-lg ">
+          <button className="flex items-center justify-center gap-1 rounded bg-[#F13E3E] md:px-6 px-3 py-2 cursor-pointer text-sm md:text-lg font-poppins font-medium">
             Delete <i className="ri-delete-bin-fill"></i>
           </button>
-          <button className="flex items-center justify-center gap-1 rounded bg-[#2CB24B] md:px-6 px-3 py-2 cursor-pointer text-sm md:text-lg">
+          <button className="flex items-center justify-center gap-1 rounded bg-[#2CB24B] md:px-6 px-3 py-2 cursor-pointer text-sm md:text-lg font-poppins font-medium">
             Edit<i className="ri-pencil-fill ps-2"></i>
           </button>
         </div>

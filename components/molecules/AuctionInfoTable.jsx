@@ -3,7 +3,7 @@
 const AuctionInfoTable = () => {
 
   return (
-    <div className="bg-light w-full rounded-xl  pt-5">
+    <div className="bg-light w-full rounded-xl px-4 pt-5">
       <h1 className="text-text md:text-2rem mb-4 text-[1.3rem] font-semibold px-4 font-poppins">
         Current Successful Auction Info
       </h1>
@@ -11,13 +11,13 @@ const AuctionInfoTable = () => {
         <table className="w-[900px] rounded-lg text-left text-sm md:min-w-full font-nunito">
           <thead className="bg-gray text-text text-lg">
             <tr className="text-[0.95rem]">
-              <th className="px-4 py-3 font-extrabold text-nowrap">Auction ID</th>
-              <th className="px-4 py-3 font-extrabold text-nowrap">Bidder Name</th>
-              <th className="px-4 py-3 font-extrabold text-nowrap">Transaction Date</th>
-              <th className="px-4 py-3 font-extrabold text-nowrap">Amount</th>
-              <th className="px-4 py-3 font-extrabold text-nowrap">Code</th>
-              <th className="px-4 py-3 font-extrabold">Message</th>
-              <th className="px-4 py-3 font-extrabold text-nowrap">Tax Inv</th>
+              <th className="px-4 py-3.5 font-extrabold text-nowrap rounded-l-xl">Auction ID</th>
+              <th className="px-4 py-3.5 font-extrabold text-nowrap">Bidder Name</th>
+              <th className="px-4 py-3.5 font-extrabold text-nowrap">Transaction Date</th>
+              <th className="px-4 py-3.5 font-extrabold text-nowrap">Amount</th>
+              <th className="px-4 py-3.5 font-extrabold text-nowrap">Code</th>
+              <th className="px-4 py-3.5 font-extrabold">Message</th>
+              <th className="px-4 py-3.5 font-extrabold text-nowrap rounded-r-xl">Tax Inv</th>
             </tr>
           </thead>
           <tbody>
