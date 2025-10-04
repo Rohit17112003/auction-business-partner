@@ -7,12 +7,12 @@ const paidPlans = [
     bgHeader: "bg-darkyellow/70",
     bgBody: "bg-darkyellow/80",
     highlight: "12 months 2500 INR",
+    feature: "List 25 products/services",
     features: [
-      "List 25 products/services",
       "List - 1 product per auction day",
-      "Benefits - Refer and earn vendors (10% for basic and 15% for premium vendors)",
+      "Benefits -Refer and earn vendors (10% for basic and 15% for premium vendors)",
       "Income tax exemption certificates as per applicability and govt guidelines",
-      "Transaction fee: Rs 250/- or 3% of highest bid value (whichever is higher)",
+      "Transaction fee will be charged @ Rs 250/- or 3% of the highest bid value whichever is higher",
     ],
   },
   {
@@ -20,8 +20,8 @@ const paidPlans = [
     bgHeader: "bg-lightyellow",
     bgBody: "bg-darkyellow",
     highlight: "12 months 5000 INR",
+    feature: "List 500 Products/Services",
     features: [
-      "List 25 products/services",
       "Listing per day - 5 products per auction day",
       "Benefits - Refer and earn vendors (10% for basic and 20% for premium vendors)",
       "Income tax exemption certificates as per applicability and govt guidelines",
@@ -72,7 +72,7 @@ const SubscriptionPlans = () => {
 
       <div className="grid gap-6 md:grid-cols-2 md:px-10">
         {paidPlans.map(
-          ({ bgHeader, bgBody, highlight, features, title }, index) => (
+          ({ bgHeader, bgBody, highlight, features, title,feature }, index) => (
             <div key={index}>
               <div className="border-light rounded-xl border-3">
                 <h2
@@ -86,6 +86,7 @@ const SubscriptionPlans = () => {
                   <h3 className="text-light text-center text-2xl leading-12 font-bold tracking-widest uppercase md:px-16 md:text-4xl">
                     {highlight}
                   </h3>
+                  <p className="-mt-4 text-[1.15rem] text-light tracking-wide font-poppins">{feature}</p>
                   <ul className="text-light -mt-2 space-y-2 text-[1.1rem] tracking-wide">
                     {features.map((feature, i) => (
                       <li key={i} className="flex gap-2">

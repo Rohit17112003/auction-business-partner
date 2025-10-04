@@ -1,13 +1,28 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import BannerButton from "@/components/atoms/BannerButton";
 import Link from "next/link";
 
 const ReferVendor = () => {
+  const [copied, setCopied] = useState(false);
+  const referralCode = "Rohit_043AE87"; // ये code तुम dynamic भी कर सकते हो
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(referralCode);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // 2 sec बाद हट जाएगा
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
+
   return (
     <section className="w-full space-y-6 overflow-y-auto">
       {/* Back Button */}
-
       <BannerButton route={"/"} label={"Refer a Vendor"} />
+
       {/* Points */}
       <div className="flex flex-col items-center justify-center gap-1 text-white">
         <Image
@@ -25,6 +40,7 @@ const ReferVendor = () => {
           </span>
         </button>
       </div>
+
       {/* refferal code */}
       <div className="relative mx-auto mb-20 rounded-xl bg-white p-3 pb-16 lg:w-[65%] lg:p-8 lg:pb-20">
         <div className="relative space-y-8">
@@ -64,23 +80,28 @@ const ReferVendor = () => {
             used to renew subscriptions or buy additional auctions.
           </p>
         </div>
+
         {/* COPY CODE */}
         <div className="absolute -bottom-10 flex w-[90%] justify-center gap-1 rounded-xl border-2 border-dashed bg-white lg:flex-row lg:gap-8">
           <div className="flex flex-col justify-center p-4 text-center">
             <h4 className="font-semibold text-[#959595] lg:text-lg">
-              Your refferal code
+              Your referral code
             </h4>
-            <h2 className="text-xl font-bold lg:text-3xl">Rohit_043AE87</h2>
+            <h2 className="text-xl font-bold lg:text-3xl">{referralCode}</h2>
           </div>
           <div className="w-fit border-r border-gray-300"></div>
-          <div className="flex items-center gap-2">
-            <i className="ri-file-copy-line ri-lg lg:ri-xl cursor-pointer"></i>{" "}
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={handleCopy}
+          >
+            <i className="ri-file-copy-line ri-lg lg:ri-xl"></i>
             <p className="text-sm font-semibold text-[#959595] lg:text-xl">
-              Copy Code
+              {copied ? "Copied!" : "Copy Code"}
             </p>
           </div>
         </div>
       </div>
+
       {/* points history button */}
       <Link href="/refer/points-history">
         <button className="mx-auto mb-10 flex items-center justify-between gap-4 rounded-xl bg-white px-8 py-4 text-lg font-bold lg:w-[50%] cursor-pointer">
