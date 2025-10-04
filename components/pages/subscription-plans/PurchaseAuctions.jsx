@@ -16,7 +16,7 @@ const PurchaseAuctions = () => {
           width={200}
           height={200}
         />
-        <span className="text-4xl font-extrabold">80</span>
+        <span className="text-4xl font-extrabold text-[#ffffff]">80</span>
         <p className="text-lg font-bold">Points</p>
         <button className="mx-auto flex items-center justify-center gap-4 rounded-xl bg-white px-8 py-4 text-lg font-bold">
           <span className="bg-gradient-to-r from-[#8A5BFF] to-[#FF407D] bg-clip-text text-transparent">

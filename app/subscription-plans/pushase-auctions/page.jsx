@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <MainLayout
       pageTitle={"Hi Admin 👋"}
-      customBg="bg-gradient-to-b from-[#FAFBE6] to-[#E7AF0E]" 
+      customBg="bg-gradient-to-b from-[#FDF3A4] to-[#E7AF0E]" 
     >
       <PurchaseAuctions />
     </MainLayout>
