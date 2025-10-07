@@ -34,7 +34,7 @@ const AddAuction = () => {
 
   return (
     <section className="space-y-6 pb-8">
-      <BannerButton route="/" label="Add New Auction" />
+      <BannerButton route="/" label="Add New Live Auction" />
       <form
         className="grid gap-x-20 gap-y-6 lg:grid-cols-2"
         onSubmit={handleSubmit}

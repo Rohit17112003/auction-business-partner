@@ -11,7 +11,7 @@ const AddAuction = () => {
     <section className="space-y-6 pb-8">
       <BannerButton
         route={"/live-auctions"}
-        label="Add new product/service for auction"
+        label="Add New Auction"
       />
       <form className="grid gap-5 md:gap-6 lg:grid-cols-2" action="">
         <ImageUploader className="md:col-span-1" />

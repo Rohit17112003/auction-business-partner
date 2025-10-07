@@ -1,14 +1,37 @@
 "use client";
+import React, { useState } from "react";
 import BannerButton from "@/components/atoms/BannerButton";
 import SearchBar from "@/components/molecules/Search";
 import Button from "@/components/atoms/Button";
 
 const PaymentManagement = () => {
+  const [search, setSearch] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState("");
+
+  const filterOptions = ["Completed", "Pending"];
+
+  // Filter data based on search and status
+  const filteredData = data.filter((item) => {
+    return (
+      item.customer.toLowerCase().includes(search.toLowerCase()) &&
+      (selectedFilter ? item.status.toLowerCase() === selectedFilter.toLowerCase() : true)
+    );
+  });
+
   return (
     <>
       <BannerButton route="/" label="Transactions and Payment details" />
+
       <section className="mt-6 w-full rounded-xl bg-white shadow">
-        <SearchBar placeholder="Search here..." />
+        <SearchBar
+          placeholder="Search by customer..."
+          value={search}
+          onChange={setSearch}
+          filterOptions={filterOptions}
+          selectedFilter={selectedFilter}
+          setSelectedFilter={setSelectedFilter}
+        />
+
         <div className="overflow-x-auto">
           <table className="text-text w-full text-sm text-nowrap">
             <thead className="bg-gray-100 text-center font-semibold">
@@ -24,7 +47,7 @@ const PaymentManagement = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map(
+              {filteredData.map(
                 (
                   {
                     auctionId,
@@ -36,39 +59,33 @@ const PaymentManagement = () => {
                     status,
                   },
                   index,
-                ) => {
-                  return (
-                    <tr
-                      key={index}
-                      className={`${index !==  data.length -1 ? "border-b border-lightgray" : ""}  text-center`}
-                    >
-                      <td className="px-4 py-6 font-medium">{auctionId}</td>
-                      <td className="px-4 py-6 font-medium">{bidderId}</td>
-                      <td className="px-4 py-6 font-medium capitalize">
-                        {customer}
-                      </td>
-                      <td className="px-4 py-6 font-medium">
-                        {transactionDate}
-                      </td>
-                      <td className="px-4 py-6 font-medium">₹{amount}</td>
-                      <td className="px-4 py-6 font-medium">₹{gst}</td>
-                      <td className="px-4 py-6">
-                        <span
-                          className={`inline-block w-[90%] rounded px-2 py-1 text-sm font-medium capitalize ${
-                            status === "pending"
-                              ? "bg-red-100 text-red-600"
-                              : "bg-teal-100 text-teal-600"
-                          }`}
-                        >
-                          {status}
-                        </span>
-                      </td>
-                      <td className="px-4 py-6 ">
-                        <i className="ri-download-2-fill text-xl font-light cursor-pointer"></i>
-                      </td>
-                    </tr>
-                  );
-                },
+                ) => (
+                  <tr
+                    key={index}
+                    className={`${index !== filteredData.length - 1 ? "border-b border-lightgray" : ""} text-center`}
+                  >
+                    <td className="px-4 py-6 font-medium">{auctionId}</td>
+                    <td className="px-4 py-6 font-medium">{bidderId}</td>
+                    <td className="px-4 py-6 font-medium capitalize">{customer}</td>
+                    <td className="px-4 py-6 font-medium">{transactionDate}</td>
+                    <td className="px-4 py-6 font-medium">₹{amount}</td>
+                    <td className="px-4 py-6 font-medium">₹{gst}</td>
+                    <td className="px-4 py-6">
+                      <span
+                        className={`inline-block w-[90%] rounded px-2 py-1 text-sm font-medium capitalize ${
+                          status.toLowerCase() === "pending"
+                            ? "bg-red-100 text-red-600"
+                            : "bg-teal-100 text-teal-600"
+                        }`}
+                      >
+                        {status}
+                      </span>
+                    </td>
+                    <td className="px-4 py-6">
+                      <i className="ri-download-2-fill text-xl font-light cursor-pointer"></i>
+                    </td>
+                  </tr>
+                ),
               )}
             </tbody>
           </table>
@@ -84,6 +101,7 @@ const PaymentManagement = () => {
 
 export default PaymentManagement;
 
+// Sample Data
 const data = [
   {
     auctionId: "HDYE7484",
@@ -121,5 +139,4 @@ const data = [
     gst: 162,
     status: "completed",
   },
-  
 ];
